@@ -1,6 +1,11 @@
 import { settingsStorage } from "settings";
 import * as messaging from "messaging";
 import { sendVal } from "./utils.js";
+import { device } from "peer";
+
+if (!device.screen) device.screen = { width: 348, height: 250 };
+console.log(`Dimensions: ${device.screen.width}x${device.screen.height}`);
+
 
 messaging.peerSocket.onopen = function() {
   restoreSettings();

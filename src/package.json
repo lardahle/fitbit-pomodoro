@@ -1,22 +1,20 @@
 {
   "devDependencies": {
-    "@fitbit/sdk": "^4.1.0",
-    "@fitbit/sdk-cli": "^1.0.2"
+    "@fitbit/sdk": "^5.0.2",
+    "@fitbit/sdk-cli": "^1.7.3"
   },
   "fitbit": {
-    "appUUID": "55d5be9a-1571-4987-b5e7-cda00dc7d56b",
+    "appUUID": "06c11503-f640-4fe1-805b-969f41408c10",
     "appType": "app",
-    "appDisplayName": "Tomatina",
+    "appDisplayName": "Tomatina V.2",
     "iconFile": "resources/icon.png",
     "wipeColor": "#f44336",
     "requestedPermissions": [
       "run_background"
     ],
     "buildTargets": [
-      "higgs",
-      "meson",
-      "gemini",
-      "mira"
+      "atlas",
+      "vulcan"
     ],
     "i18n": {
       "en": {

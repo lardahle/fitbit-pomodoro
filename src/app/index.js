@@ -9,6 +9,7 @@ import Settings from './settings';
 import UI from './ui';
 
 if (!device.screen) device.screen = { width: 348, height: 250 };
+console.log(`Dimensions: ${device.screen.width}x${device.screen.height}`);
 
 // Create globals, UI, utils, and settings objects
 var globals = new Globals();
