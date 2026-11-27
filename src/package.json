@@ -8,8 +8,8 @@
   },
   "fitbit": {
     "appUUID": "06c11503-f640-4fe1-805b-969f41408c10",
-    "appType": "app",
-    "appDisplayName": "Tomatina V.2",
+    "appType": "clockface",
+    "appDisplayName": "Tomatina Face",
     "iconFile": "resources/icon.png",
     "wipeColor": "#f44336",
     "requestedPermissions": [
@@ -41,8 +41,7 @@
       "ko": {
         "name": "토마티나"
       }
-    },
-    "enableProposedAPI": true
+    }
   },
   "scripts": {
     "build": "fitbit-build",

@@ -13,10 +13,10 @@ export default class UI {
 
   constructor() {
     this._backgroundRect = document.getElementById('backgroundRect');
-    this._btnTRReset = document.getElementById('btnTRReset');
-    this._btnTRForward = document.getElementById('btnTRForward');
-    this._btnBRPlay = document.getElementById('btnBRPlay');
-    this._btnBRPause = document.getElementById('btnBRPause');
+    this._btnTRReset = document.getElementById('btnTRReset') || { style: {} };  // stub if absent (clockface has no combo buttons)
+    this._btnTRForward = document.getElementById('btnTRForward') || { style: {} };  // stub if absent (clockface has no combo buttons)
+    this._btnBRPlay = document.getElementById('btnBRPlay') || { style: {} };  // stub if absent (clockface has no combo buttons)
+    this._btnBRPause = document.getElementById('btnBRPause') || { style: {} };  // stub if absent (clockface has no combo buttons)
     this._pomodoroText = document.getElementById('pomodoroText');
     this._stateText = document.getElementById('stateText');
     this._minuteText = document.getElementById('minuteText');
@@ -65,18 +65,15 @@ export default class UI {
       case 'initialize':
       case 'working':
       case 'working-paused':
-        this._backgroundRect.gradient.colors.c1 = 'tomato';
-        this._backgroundRect.gradient.colors.c2 = 'red';
+        this._backgroundRect.style.fill = 'tomato';
         break;
       case 'shortResting':
       case 'shortResting-paused':
-        this._backgroundRect.gradient.colors.c1 = 'mediumseagreen';
-        this._backgroundRect.gradient.colors.c2 = 'seagreen';
+        this._backgroundRect.style.fill = 'mediumseagreen';
         break;
       case 'longResting':
       case 'longResting-paused':
-        this._backgroundRect.gradient.colors.c1 = 'royalblue';
-        this._backgroundRect.gradient.colors.c2 = 'steelblue';
+        this._backgroundRect.style.fill = 'royalblue';
         break;
     }
   }
