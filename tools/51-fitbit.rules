@@ -1,0 +1,2 @@
+# Fitbit Sense 2 / Versa 4 developer bridge (USB CDC debug host)
+SUBSYSTEM=="usb", ATTR{idVendor}=="2687", MODE="0660", GROUP="plugdev"

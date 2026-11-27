@@ -46,3 +46,21 @@
   font-family: Seville-Book;
   font-size: 40;
 }
+
+#clockText {
+  fill: #FFFFFF;
+  font-family: Seville-Bold;
+  font-size: 44;
+}
+
+#aodClock {
+  fill: #FFFFFF;
+  font-family: Seville-Book;
+  font-size: 96;
+}
+
+#aodTimer {
+  fill: #A0A0A0;
+  font-family: Seville-Book;
+  font-size: 30;
+}

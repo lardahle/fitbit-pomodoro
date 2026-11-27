@@ -7,6 +7,7 @@ import Globals from './globals';
 import Utils from './utils';
 import Settings from './settings';
 import UI from './ui';
+import Face from './face';
 
 if (!device.screen) device.screen = { width: 348, height: 250 };
 console.log(`Dimensions: ${device.screen.width}x${device.screen.height}`);
@@ -16,6 +17,7 @@ var globals = new Globals();
 var settings = new Settings();
 var utils = new Utils();
 var ui = new UI();
+var face = new Face(globals);
 
 me.addEventListener('unload', () => {
   globals.save();

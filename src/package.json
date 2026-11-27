@@ -7,14 +7,12 @@
     "@fitbit/sdk-build-targets": "cmengler/fitbit-sdk-build-targets"
   },
   "fitbit": {
-    "appUUID": "06c11503-f640-4fe1-805b-969f41408c10",
-    "appType": "app",
-    "appDisplayName": "Tomatina V.2",
+    "appUUID": "aab77b22-61fa-439b-9e4e-8487e4820d63",
+    "appType": "clockface",
+    "appDisplayName": "Tomatina Face",
     "iconFile": "resources/icon.png",
     "wipeColor": "#f44336",
-    "requestedPermissions": [
-      "run_background"
-    ],
+    "requestedPermissions": [],
     "buildTargets": [
       "hera",
       "rhea"
@@ -41,8 +39,7 @@
       "ko": {
         "name": "토마티나"
       }
-    },
-    "enableProposedAPI": true
+    }
   },
   "scripts": {
     "build": "fitbit-build",

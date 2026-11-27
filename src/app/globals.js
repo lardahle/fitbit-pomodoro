@@ -108,18 +108,15 @@ export default class Globals {
   }
 
   resetSecondsToEnd(pomodoroDuration, shortRestDuration, longRestDuration) {
+    let duration = pomodoroDuration;
     switch (this._state) {
-      case 'working':
-      case 'working-paused':
-        let duration = pomodoroDuration;
-        break;
       case 'shortResting':
       case 'shortResting-paused':
-        let duration = shortRestDuration;
+        duration = shortRestDuration;
         break;
       case 'longResting':
       case 'longResting-paused':
-        let duration = longRestDuration;
+        duration = longRestDuration;
         break;
       default:
         break;
