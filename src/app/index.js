@@ -79,7 +79,7 @@ ui.resetButton.onactivate = evt => {
           ui.pomodoroRect.width = device.screen.width;
           clearInterval(enable);
         }
-      }, 1);
+      }, 24);
     }, 300);
 
     utils.reinit(globals, settings, ui);
@@ -93,6 +93,34 @@ ui.forwardButton.onactivate = evt => {
     endStateTimer(true);
   }
 }
+
+
+// [Sense 2] Full-screen tap: combo buttons don't register touch, so drive the
+// primary action from a plain tap zone. Tap = start / pause / resume.
+import document from 'document';
+import clock from 'clock';
+clock.granularity = 'minutes';
+const clockText = document.getElementById('clockText');
+function renderClock(d) {
+  let h = d.getHours();
+  const m = d.getMinutes();
+  clockText.text = (h < 10 ? '0' + h : h) + ':' + (m < 10 ? '0' + m : m);
+}
+clock.ontick = (evt) => renderClock(evt.date);
+renderClock(new Date());
+
+const tapZone = document.getElementById('tapZone');
+if (tapZone) {
+  tapZone.onclick = (e) => {
+    const st = globals.state;
+    if (st === 'working' || st === 'shortResting' || st === 'longResting') {
+      ui.pauseButton.onactivate(e);      // running -> pause
+    } else {
+      ui.playButton.onactivate(e);       // initialize or *-paused -> start/resume
+    }
+  };
+}
+
 
 ui.playButton.onactivate = evt => {
   if (!globals.isAnimating) {
@@ -108,7 +136,7 @@ ui.playButton.onactivate = evt => {
           ui.pomodoroRect.width = 0;
           clearInterval(disable);
         }
-      }, 1);
+      }, 24);
 
       // Delay starting timer until after animation is done
       setTimeout(() => {
@@ -199,7 +227,7 @@ function endStateTimer(start_next) {
       ui.pomodoroRect.width = 0;
       clearInterval(disable);
     }
-  }, 1);
+  }, 24);
 
   // It is the responsibility of the endStateTimer to increment the state
   // if starting the next state after ending a timer

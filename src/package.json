@@ -9,7 +9,7 @@
   "fitbit": {
     "appUUID": "06c11503-f640-4fe1-805b-969f41408c10",
     "appType": "app",
-    "appDisplayName": "Tomatina V.2",
+    "appDisplayName": "Tomatina",
     "iconFile": "resources/icon.png",
     "wipeColor": "#f44336",
     "requestedPermissions": [

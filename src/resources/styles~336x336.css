@@ -46,3 +46,9 @@
   font-family: Seville-Book;
   font-size: 40;
 }
+
+#clockText {
+  fill: #FFFFFF;
+  font-family: Seville-Bold;
+  font-size: 40;
+}
